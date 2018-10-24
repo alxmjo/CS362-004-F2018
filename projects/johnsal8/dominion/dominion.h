@@ -73,9 +73,12 @@ struct gameState {
   int playedCardCount;
 };
 
+// Added by Alex
+int compare(const void* a, const void* b);
+int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus);
+
 /* All functions return -1 on failure, and DO NOT CHANGE GAME STATE;
    unless specified for other return, return 0 on success */
-
 struct gameState* newGame();
 
 int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
