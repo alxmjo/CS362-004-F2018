@@ -7,7 +7,6 @@
 char inputChar()
 {
     char c = (random() % (127 - 32)) + 32;
-    printf("%c\n", c);
     return c;
 }
 
