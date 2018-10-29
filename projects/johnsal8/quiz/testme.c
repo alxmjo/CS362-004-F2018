@@ -1,12 +1,12 @@
-#include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
-#include<time.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
 
 // Generate random char between ' ' and ']' and return it
 char inputChar()
 {
-    char c = (random() % (127 - 32)) + 32;
+    char c = (rand() % (127 - 32)) + 32;
     return c;
 }
 
@@ -17,7 +17,7 @@ char *inputString()
     int count = 0;
     while (count < 5)
     {
-      char c = (random() % (117 - 101)) + 101;
+      char c = (rand() % (117 - 101)) + 101;
       result[count] = c;
       count++;
     }
