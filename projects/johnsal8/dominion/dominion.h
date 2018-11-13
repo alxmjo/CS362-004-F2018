@@ -15,6 +15,8 @@
 
 /* hand# means index of a card in current active player's hand */
 
+
+
 enum CARD
   {curse = 0,
    estate,
@@ -73,12 +75,9 @@ struct gameState {
   int playedCardCount;
 };
 
-// Added by Alex
-int compare(const void* a, const void* b);
-int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus);
-
 /* All functions return -1 on failure, and DO NOT CHANGE GAME STATE;
    unless specified for other return, return 0 on success */
+
 struct gameState* newGame();
 
 int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
@@ -131,4 +130,12 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state);
 /* Set array position of each player who won (remember ties!) to
    1, others to 0 */
 
+// Added by johnsal8
+void runSmithy(int currentPlayer, int handPos, struct gameState* state);
+void runAdventurer(int currentPlayer, int handPos, struct gameState* state, int drawntreasure, int temphand[], int cardDrawn, int z);
+void runVillage(int currentPlayer, int handPos, struct gameState* state);
+void runGreat_hall(int currentPlayer, int handPos, struct gameState* state);
+int runEmbargo(int currentPlayer, int handPos, struct gameState* state, int choice1);
+int compare(const void* a, const void* b);
+int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus);
 #endif
